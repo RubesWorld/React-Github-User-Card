@@ -3,7 +3,7 @@ import React from 'react'
 import './App.css';
 
 //Component Imports
-import FollowerCard from './FollowerCard';
+import UserCard from './UserCard';
 
 
 const info = [
@@ -39,16 +39,7 @@ class App extends React.Component {
     return (
       <>
           <div className="main-card">
-              <div className="top-half">
-                <h1>GitHub UserCard!</h1>
-                <div className="img-container">
-                  <img  src={this.state.user["avatar.url"]} alt="github image" width="200" height="200"/>
-                </div>
-                <h2>{this.state.user.login}</h2>
-                <h2>{this.state.user.location}</h2>
-                <p>{this.state.user.bio}</p>
-              </div>
-            <FollowerCard/>
+            <UserCard info={this.state.user}/>
           </div>
     </> 
   )
