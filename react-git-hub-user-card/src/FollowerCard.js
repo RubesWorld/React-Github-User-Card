@@ -16,6 +16,15 @@ class FollowerCard extends React.Component {
             .catch(err=>{
                 console.log(err)
             });
+            axios.get(`https://api.github.com/users/${this.state.name}/followers`)
+            .then((res)=>{
+                this.setState({
+                    followers: res.data
+                })
+            })
+            .catch(err=>{
+                console.log(err)
+            });
     }
 
     render(){
